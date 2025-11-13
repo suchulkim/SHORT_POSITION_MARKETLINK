@@ -1,14 +1,13 @@
 
-    <!DOCTYPE html>
 <!DOCTYPE html>
-    <html lang="ko">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>암호화폐 패턴 최적화 분석 결과 (3개 캔들)</title>
-        <script src="https://s3.tradingview.com/tv.js"></script>
-        <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
-        <style>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>하이브리드 포지션 시스템 - AI 분석 결과</title>
+    <script src="https://s3.tradingview.com/tv.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.26.0.min.js"></script>
+    <style>
         :root {
             --primary-color: #1a1a2e;
             --secondary-color: #16213e;
@@ -16,6 +15,8 @@
             --success-color: #28a745;
             --warning-color: #ffc107;
             --danger-color: #dc3545;
+            --long-color: #26a69a;
+            --short-color: #ef5350;
             --bg-color: #f8f9fa;
             --card-bg: #ffffff;
             --text-color: #2c3e50;
@@ -113,6 +114,80 @@
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
             filter: brightness(1.1);
+        }
+
+        /* ✨ 포지션 분석 섹션 스타일 */
+        .position-analysis {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            color: white;
+        }
+
+        .position-title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .position-direction {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 900;
+            margin: 1rem 0;
+            padding: 1rem;
+            border-radius: 12px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .position-direction.long {
+            background: linear-gradient(135deg, #26a69a, #00897b);
+            border: 3px solid #004d40;
+        }
+
+        .position-direction.short {
+            background: linear-gradient(135deg, #ef5350, #e53935);
+            border: 3px solid #b71c1c;
+        }
+
+        .position-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .position-stat-card {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .position-stat-value {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .position-stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+
+        .position-reason {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin-top: 1.5rem;
+            text-align: center;
+            font-size: 1.2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
         }
 
         .analysis-summary {
@@ -267,6 +342,26 @@
             background: var(--accent-color);
             color: white;
             text-decoration: none;
+        }
+
+        .position-badge {
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .position-long {
+            background: linear-gradient(135deg, #d4edda, #c3e6cb);
+            color: #155724;
+            border: 2px solid #28a745;
+        }
+
+        .position-short {
+            background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+            color: #721c24;
+            border: 2px solid #dc3545;
         }
 
         .risk-badge {
@@ -472,14 +567,13 @@
             line-height: 1.6;
             font-size: 1.3rem;
         }
-        
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>🧠 패턴 최적화 AI 롱포지션 최적합 종목 분석</h1>
-            <div class="subtitle">음봉-양봉-양봉 / 양봉-양봉-양봉(가격상승률 10~20%) 패턴 전문 • +55% 익절 / -18% 손절 시스템 • 2025-11-14 00:08:41</div>
+            <h1>🔄 하이브리드 포지션 AI 시스템</h1>
+            <div class="subtitle">롱/숏 자동 선택 • +55% 익절 / -18% 손절 • 2025-11-14 00:14:23</div>
         </div>
 
         <div class="nav-menu">
@@ -492,8 +586,52 @@
         </div>
 
         
+        <div class="position-analysis">
+            <div class="position-title">🎯 AI 포지션 방향 분석</div>
+            
+            <div class="position-direction long">
+                📈 LONG 포지션
+            </div>
+            
+            <div class="position-stats-grid">
+                <div class="position-stat-card">
+                    <div class="position-stat-value">0.0%</div>
+                    <div class="position-stat-label">신뢰도</div>
+                </div>
+                <div class="position-stat-card">
+                    <div class="position-stat-value">0회</div>
+                    <div class="position-stat-label">롱 수익</div>
+                </div>
+                <div class="position-stat-card">
+                    <div class="position-stat-value">0회</div>
+                    <div class="position-stat-label">롱 손실</div>
+                </div>
+                <div class="position-stat-card">
+                    <div class="position-stat-value">0회</div>
+                    <div class="position-stat-label">숏 수익</div>
+                </div>
+                <div class="position-stat-card">
+                    <div class="position-stat-value">0회</div>
+                    <div class="position-stat-label">숏 손실</div>
+                </div>
+                <div class="position-stat-card">
+                    <div class="position-stat-value">+0.00%</div>
+                    <div class="position-stat-label">롱 누적</div>
+                </div>
+                <div class="position-stat-card">
+                    <div class="position-stat-value">+0.00%</div>
+                    <div class="position-stat-label">숏 누적</div>
+                </div>
+            </div>
+            
+            <div class="position-reason">
+                📝 판단 근거: 추적 데이터 부족 (기본값: LONG)
+            </div>
+        </div>
+        
+        
         <div class="analysis-summary">
-            <h2 class="section-title">📈 패턴 최적화 AI 최고점수 종목</h2>
+            <h2 class="section-title">📈 AI 최고점수 종목</h2>
             
             <div class="stats-grid">
                 <div class="stat-card">
@@ -501,33 +639,37 @@
                     <div class="stat-label">종목명</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">12</div>
+                    <div class="stat-value position-badge position-long">LONG</div>
+                    <div class="stat-label">포지션</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">70</div>
                     <div class="stat-label">최종 점수</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">87.0%</div>
+                    <div class="stat-value">70.0%</div>
                     <div class="stat-label">신뢰도</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">12.1%</div>
+                    <div class="stat-value">70.4%</div>
                     <div class="stat-label">추가상승 확률</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">$0.141870</div>
+                    <div class="stat-value">$0.142640</div>
                     <div class="stat-label">현재가</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value risk-badge risk-high">HIGH</div>
+                    <div class="stat-value risk-badge risk-low">LOW</div>
                     <div class="stat-label">리스크</div>
                 </div>
             </div>
             
             <div class="tracking-info">
-                <div class="tracking-info-title">🎯 패턴 최적화 AI 특징 (3개 캔들)</div>
+                <div class="tracking-info-title">🎯 하이브리드 포지션 시스템 특징</div>
                 <div class="tracking-info-text">
-                    • 음봉-양봉-양봉 / 양봉-양봉-양봉(가격상승률 10~20%) 패턴에만 특화된 학습<br>
-                    • 18개 특성 (기존 15개 + 패턴 강도/가속도/타입)<br>
-                    • 추가 상승에 최적화된 레이블링<br>
+                    • 최근 7개 추적 결과로 롱/숏 자동 선택<br>
+                    • 수익률 기준: +5% 이상 (수익) / -5% 이하 (손실)<br>
+                    • 현재 선택: <strong>LONG</strong> 포지션<br>
                     • +55% 익절 시스템 적용<br>
                     • -18% 손절 시스템 적용
                 </div>
@@ -575,14 +717,14 @@
         
         
         <div class="history-section">
-            <h2 class="section-title">📋 패턴 최적화 AI 24시간 성과 추적</h2>
+            <h2 class="section-title">📋 하이브리드 24시간 성과 추적</h2>
             
             <div class="tracking-info">
                 <div class="tracking-info-title">📊 추적 성과 요약</div>
                 <div class="tracking-info-text">
                     <strong>승률:</strong> 0.0% (0/0) | 
                     <strong>누적 수익률:</strong> <span class="negative">+0.00%</span> | 
-                    <strong>총 추적 건수:</strong> 3건<br>
+                    <strong>총 추적 건수:</strong> 2건<br>
                     <strong>🎉 익절 발동:</strong> <span class="positive">0건 (0.0%)</span> | 
                     <strong>🛑 손절 발동:</strong> <span class="negative">0건 (0.0%)</span>
                 </div>
@@ -595,6 +737,7 @@
                     <tr>
                         <th>날짜</th>
                         <th>종목</th>
+                        <th>포지션</th>
                         <th>점수</th>
                         <th>AI 확률</th>
                         <th>24시간 결과</th>
@@ -605,30 +748,22 @@
                 <tbody>
                     
                 <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 00:08</td>
+                    <td style="font-weight: bold;">2025-11-14 (금) 00:14</td>
                     <td><a href="https://www.binance.com/en/futures/RESOLV_USDT" target="_blank" class="symbol-link">RESOLVUSDT</a></td>
-                    <td style="font-weight: bold;">12</td>
-                    <td style="font-weight: bold;">12.1%</td>
+                    <td><span class="position-badge position-long">📈 LONG</span></td>
+                    <td style="font-weight: bold;">70</td>
+                    <td style="font-weight: bold;">70.4%</td>
                     <td><div class="tracking-result tracking-pending">대기중</div></td>
                     <td><div class="return-stats">-</div></td>
                     <td><span class="risk-badge risk-medium">대기</span></td>
                 </tr>
             
                 <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 00:02</td>
-                    <td><a href="https://www.binance.com/en/futures/BANK_USDT" target="_blank" class="symbol-link">BANKUSDT</a></td>
-                    <td style="font-weight: bold;">16</td>
-                    <td style="font-weight: bold;">15.6%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-13 (목) 23:52</td>
-                    <td><a href="https://www.binance.com/en/futures/FOLKS_USDT" target="_blank" class="symbol-link">FOLKSUSDT</a></td>
-                    <td style="font-weight: bold;">21</td>
-                    <td style="font-weight: bold;">20.8%</td>
+                    <td style="font-weight: bold;">2025-11-14 (금) 00:14</td>
+                    <td><a href="https://www.binance.com/en/futures/RESOLV_USDT" target="_blank" class="symbol-link">RESOLVUSDT</a></td>
+                    <td><span class="position-badge position-long">📈 LONG</span></td>
+                    <td style="font-weight: bold;">70</td>
+                    <td style="font-weight: bold;">70.4%</td>
                     <td><div class="tracking-result tracking-pending">대기중</div></td>
                     <td><div class="return-stats">-</div></td>
                     <td><span class="risk-badge risk-medium">대기</span></td>
@@ -651,14 +786,15 @@
         
 
         <div class="warning-box">
-            <div class="warning-title">🚨 CRITICAL INVESTMENT WARNING 🚨</div>
+            <div class="warning-title">🚨 하이브리드 포지션 시스템 경고 🚨</div>
             <div class="warning-text">
                 <strong>이 시스템은 교육 목적으로만 제공됩니다:</strong><br><br>
+                🔄 <strong>하이브리드 시스템: 최근 7개 추적 결과로 롱/숏 자동 선택</strong><br>
                 🎉 <strong>+55% 익절 시스템: 목표 수익 달성 시 자동 종료</strong><br>
                 🛑 <strong>-18% 손절 시스템: 손실 제한 (슬리피지 가능)</strong><br>
-                🔴 <strong>패턴 최적화 AI도 절대 100% 정확하지 않습니다</strong><br>
+                🔴 <strong>AI도 절대 100% 정확하지 않습니다</strong><br>
                 🔴 <strong>과거 데이터가 미래 수익을 보장하지 않습니다</strong><br>
-                📊 <strong>3개 캔들 패턴 전용 (음봉-양봉-양봉, 양봉-양봉-양봉)</strong><br>
+                📊 <strong>반드시 매우 소액으로 검증하세요</strong><br>
             </div>
         </div>
     </div>
