@@ -131,7 +131,7 @@
             margin-bottom: 1rem;
             color: var(--primary-color);
             font-weight: 700;
-        }
+            
 
         .position-direction {
             text-align: center;
@@ -141,7 +141,7 @@
             padding: 1rem;
             border-radius: 12px;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            color: black;
+            color: white;
         }
 
         .position-direction.long {
@@ -587,7 +587,7 @@
     <div class="container">
         <div class="header">
             <h1>🔄 하이브리드 포지션 AI 시스템</h1>
-            <div class="subtitle">롱/숏 자동 선택 • +55% 익절 / -18% 손절 • 2025-11-14 17:54:38</div>
+            <div class="subtitle">롱/숏 자동 선택 • +55% 익절 / -18% 손절 • 2025-11-14 21:13:36</div>
         </div>
 
         <div class="nav-menu">
@@ -609,7 +609,7 @@
             
             <div class="position-stats-grid">
                 <div class="position-stat-card">
-                    <div class="position-stat-value">3.3%</div>
+                    <div class="position-stat-value">0.0%</div>
                     <div class="position-stat-label">신뢰도</div>
                 </div>
                 <div class="position-stat-card">
@@ -629,17 +629,17 @@
                     <div class="position-stat-label">숏 손실</div>
                 </div>
                 <div class="position-stat-card">
-                    <div class="position-stat-value">+0.49%</div>
+                    <div class="position-stat-value">+0.00%</div>
                     <div class="position-stat-label">롱 누적</div>
                 </div>
                 <div class="position-stat-card">
-                    <div class="position-stat-value">-0.49%</div>
+                    <div class="position-stat-value">+0.00%</div>
                     <div class="position-stat-label">숏 누적</div>
                 </div>
             </div>
             
             <div class="position-reason">
-                📝 판단 근거: 롱포지션 수익률 우위 (+0.49% vs -0.49%)
+                📝 판단 근거: 추적 데이터 부족 (기본값: LONG)
             </div>
         </div>
         
@@ -649,7 +649,7 @@
             
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-value">BANKUSDT</div>
+                    <div class="stat-value">RESOLVUSDT</div>
                     <div class="stat-label">종목명</div>
                 </div>
                 <div class="stat-card">
@@ -657,23 +657,23 @@
                     <div class="stat-label">포지션</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">76</div>
+                    <div class="stat-value">65</div>
                     <div class="stat-label">최종 점수</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">76.0%</div>
+                    <div class="stat-value">65.0%</div>
                     <div class="stat-label">신뢰도</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">76.2%</div>
+                    <div class="stat-value">65.2%</div>
                     <div class="stat-label">추가상승 확률</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value">$0.053030</div>
+                    <div class="stat-value">$0.142670</div>
                     <div class="stat-label">현재가</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-value risk-badge risk-low">LOW</div>
+                    <div class="stat-value risk-badge risk-medium">MEDIUM</div>
                     <div class="stat-label">리스크</div>
                 </div>
             </div>
@@ -693,9 +693,9 @@
         
         <div class="chart-section">
             <div class="chart-header">
-                <h2 class="section-title">📈 BANKUSDT 실시간 차트 (4시간봉)</h2>
+                <h2 class="section-title">📈 RESOLVUSDT 실시간 차트 (4시간봉)</h2>
                 <div class="chart-controls">
-                    <a href="https://www.binance.com/en/futures/BANK_USDT" target="_blank" class="chart-btn binance-btn">
+                    <a href="https://www.binance.com/en/futures/RESOLV_USDT" target="_blank" class="chart-btn binance-btn">
                         🏦 바이낸스에서 보기
                     </a>
                 </div>
@@ -709,7 +709,7 @@
             new TradingView.widget({
                 "width": "100%",
                 "height": 800,
-                "symbol": "BINANCE:BANKUSDT",
+                "symbol": "BINANCE:RESOLVUSDT",
                 "interval": "240",
                 "timezone": "Asia/Seoul",
                 "theme": "dark",
@@ -738,7 +738,7 @@
                 <div class="tracking-info-text">
                     <strong>승률:</strong> 0.0% (0/0) | 
                     <strong>누적 수익률:</strong> <span class="negative">+0.00%</span> | 
-                    <strong>총 추적 건수:</strong> 16건<br>
+                    <strong>총 추적 건수:</strong> 2건<br>
                     <strong>🎉 익절 발동:</strong> <span class="positive">0건 (0.0%)</span> | 
                     <strong>🛑 손절 발동:</strong> <span class="negative">0건 (0.0%)</span>
                 </div>
@@ -762,176 +762,22 @@
                 <tbody>
                     
                 <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:54</td>
-                    <td><a href="https://www.binance.com/en/futures/BANK_USDT" target="_blank" class="symbol-link">BANKUSDT</a></td>
-                    <td><span class="position-badge position-long">📈 LONG</span></td>
-                    <td style="font-weight: bold;">76</td>
-                    <td style="font-weight: bold;">76.2%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:54</td>
-                    <td><a href="https://www.binance.com/en/futures/BANK_USDT" target="_blank" class="symbol-link">BANKUSDT</a></td>
-                    <td><span class="position-badge position-long">📈 LONG</span></td>
-                    <td style="font-weight: bold;">76</td>
-                    <td style="font-weight: bold;">76.2%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:48</td>
+                    <td style="font-weight: bold;">2025-11-14 (금) 21:13</td>
                     <td><a href="https://www.binance.com/en/futures/RESOLV_USDT" target="_blank" class="symbol-link">RESOLVUSDT</a></td>
                     <td><span class="position-badge position-long">📈 LONG</span></td>
-                    <td style="font-weight: bold;">74</td>
-                    <td style="font-weight: bold;">74.0%</td>
+                    <td style="font-weight: bold;">65</td>
+                    <td style="font-weight: bold;">65.2%</td>
                     <td><div class="tracking-result tracking-pending">대기중</div></td>
                     <td><div class="return-stats">-</div></td>
                     <td><span class="risk-badge risk-medium">대기</span></td>
                 </tr>
             
                 <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:48</td>
-                    <td><a href="https://www.binance.com/en/futures/RESOLV_USDT" target="_blank" class="symbol-link">RESOLVUSDT</a></td>
-                    <td><span class="position-badge position-short">📉 SHORT</span></td>
-                    <td style="font-weight: bold;">74</td>
-                    <td style="font-weight: bold;">74.0%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:39</td>
-                    <td><a href="https://www.binance.com/en/futures/FOLKS_USDT" target="_blank" class="symbol-link">FOLKSUSDT</a></td>
-                    <td><span class="position-badge position-short">📉 SHORT</span></td>
-                    <td style="font-weight: bold;">49</td>
-                    <td style="font-weight: bold;">49.0%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:39</td>
-                    <td><a href="https://www.binance.com/en/futures/FOLKS_USDT" target="_blank" class="symbol-link">FOLKSUSDT</a></td>
-                    <td><span class="position-badge position-long">📈 LONG</span></td>
-                    <td style="font-weight: bold;">49</td>
-                    <td style="font-weight: bold;">49.0%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:35</td>
-                    <td><a href="https://www.binance.com/en/futures/BANK_USDT" target="_blank" class="symbol-link">BANKUSDT</a></td>
-                    <td><span class="position-badge position-long">📈 LONG</span></td>
-                    <td style="font-weight: bold;">76</td>
-                    <td style="font-weight: bold;">76.2%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:35</td>
-                    <td><a href="https://www.binance.com/en/futures/BANK_USDT" target="_blank" class="symbol-link">BANKUSDT</a></td>
-                    <td><span class="position-badge position-long">📈 LONG</span></td>
-                    <td style="font-weight: bold;">76</td>
-                    <td style="font-weight: bold;">76.2%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:32</td>
-                    <td><a href="https://www.binance.com/en/futures/RESOLV_USDT" target="_blank" class="symbol-link">RESOLVUSDT</a></td>
-                    <td><span class="position-badge position-short">📉 SHORT</span></td>
-                    <td style="font-weight: bold;">74</td>
-                    <td style="font-weight: bold;">74.0%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:32</td>
+                    <td style="font-weight: bold;">2025-11-14 (금) 21:13</td>
                     <td><a href="https://www.binance.com/en/futures/RESOLV_USDT" target="_blank" class="symbol-link">RESOLVUSDT</a></td>
                     <td><span class="position-badge position-long">📈 LONG</span></td>
-                    <td style="font-weight: bold;">74</td>
-                    <td style="font-weight: bold;">74.0%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:14</td>
-                    <td><a href="https://www.binance.com/en/futures/FOLKS_USDT" target="_blank" class="symbol-link">FOLKSUSDT</a></td>
-                    <td><span class="position-badge position-long">📈 LONG</span></td>
-                    <td style="font-weight: bold;">50</td>
-                    <td style="font-weight: bold;">50.2%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:14</td>
-                    <td><a href="https://www.binance.com/en/futures/FOLKS_USDT" target="_blank" class="symbol-link">FOLKSUSDT</a></td>
-                    <td><span class="position-badge position-long">📈 LONG</span></td>
-                    <td style="font-weight: bold;">50</td>
-                    <td style="font-weight: bold;">50.2%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:11</td>
-                    <td><a href="https://www.binance.com/en/futures/BANK_USDT" target="_blank" class="symbol-link">BANKUSDT</a></td>
-                    <td><span class="position-badge position-long">📈 LONG</span></td>
-                    <td style="font-weight: bold;">76</td>
-                    <td style="font-weight: bold;">76.2%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 17:11</td>
-                    <td><a href="https://www.binance.com/en/futures/BANK_USDT" target="_blank" class="symbol-link">BANKUSDT</a></td>
-                    <td><span class="position-badge position-long">📈 LONG</span></td>
-                    <td style="font-weight: bold;">76</td>
-                    <td style="font-weight: bold;">76.2%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 00:14</td>
-                    <td><a href="https://www.binance.com/en/futures/RESOLV_USDT" target="_blank" class="symbol-link">RESOLVUSDT</a></td>
-                    <td><span class="position-badge position-long">📈 LONG</span></td>
-                    <td style="font-weight: bold;">70</td>
-                    <td style="font-weight: bold;">70.4%</td>
-                    <td><div class="tracking-result tracking-pending">대기중</div></td>
-                    <td><div class="return-stats">-</div></td>
-                    <td><span class="risk-badge risk-medium">대기</span></td>
-                </tr>
-            
-                <tr style="font-size: 1.2rem;">
-                    <td style="font-weight: bold;">2025-11-14 (금) 00:14</td>
-                    <td><a href="https://www.binance.com/en/futures/RESOLV_USDT" target="_blank" class="symbol-link">RESOLVUSDT</a></td>
-                    <td><span class="position-badge position-long">📈 LONG</span></td>
-                    <td style="font-weight: bold;">70</td>
-                    <td style="font-weight: bold;">70.4%</td>
+                    <td style="font-weight: bold;">65</td>
+                    <td style="font-weight: bold;">65.2%</td>
                     <td><div class="tracking-result tracking-pending">대기중</div></td>
                     <td><div class="return-stats">-</div></td>
                     <td><span class="risk-badge risk-medium">대기</span></td>
