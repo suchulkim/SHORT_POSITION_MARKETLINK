@@ -63,6 +63,57 @@
             font-size: 1.1rem;
         }
 
+                .nav-menu {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            padding: 1.3rem 2.5rem;
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            font-weight: 700;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-link.dashboard {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+        }
+
+        .nav-link.market {
+            background: linear-gradient(135deg, #f093fb, #f5576c);
+        }
+
+        .nav-link.pattern {
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+        }
+
+        .nav-link.trading {
+            background: linear-gradient(135deg, #43e97b, #38f9d7);
+        }
+
+        .nav-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            filter: brightness(1.1);
+        }
+
         .position-banner {
             background: linear-gradient(135deg, #dc3545, #dc3545dd);
             color: white;
@@ -430,13 +481,22 @@
     <div class="container">
         <div class="header">
             <h1>🔄 LONG_POSITION_OPTIMAL 실적 기반 적응형 포지션 시스템</h1>
-            <div class="subtitle">LONG_POSITION_OPTIMAL 실적 기반  • 2025-11-22 12:35:02</div>
+            <div class="subtitle">LONG_POSITION_OPTIMAL 실적 기반  • 2025-11-22 14:30:12</div>
+        </div>
+
+        <div class="nav-menu">
+            <div class="nav-links">
+                <a href="dashboard.html" class="nav-link dashboard">📊 코인선물 종합 지수</a>
+                <a href="BinanceMarketOverview.html" class="nav-link market">🌍 코인선물 시장 현황</a>
+                <a href="CandlePatternAnalysis.html" class="nav-link pattern">📈 코인선물 롱포지션 최적합 패턴 검출 현황</a>
+                <a href="Trading_result.html" class="nav-link trading">💰 코인선물 매매 결과 분석</a>
+            </div>
         </div>
 
         <div class="position-banner">
             <h2>📉 포지션 방향: SHORT</h2>
-            <div class="confidence warning-score-critical">🔴 경고 점수: 7/10</div>
-            <div class="reason">손실 5/6 종목 (심각) | 평균 -2.9% (약간 나쁨) | 손절 0건 (좋음) → SHORT 강력 권장</div>
+            <div class="confidence warning-score-critical">🔴 경고 점수: 10/10</div>
+            <div class="reason">손실 6/6 종목 (심각) | 평균 -5.3% (참담) | 손절 0건 (좋음) → SHORT 강력 권장</div>
         </div>
 
         
@@ -564,9 +624,9 @@
                     <td><span class="position-badge position-short">SHORT</span></td>
                     <td style="font-weight: bold;">34</td>
                     <td style="max-width: 300px;"><div style="font-size: 1.0rem;font-weight: bold; line-height: 1.4; color: #2c3e50;">손실 5/6 종목 (심각) | 평균 -2.9% (약간 나쁨) | 손절 0건 (좋음) → SHORT 강력 권장</div></td>
-                    <td><div class="tracking-result tracking-failed">실패</div></td>
+                    <td><div class="tracking-result tracking-pending">대기중</div></td>
                     <td><div class="return-stats">-</div></td>
-                    <td><span style="color: #6c757d; font-weight: bold;">실패</span></td>
+                    <td><span style="color: #ffc107; font-weight: bold;">대기</span></td>
                 </tr>
             
                 <tr style="font-size: 1.2rem;">
